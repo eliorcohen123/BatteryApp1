@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1023865590590",
+    "firebase_url": "https://bff-battery.firebaseio.com",
+    "project_id": "bff-battery",
+    "storage_bucket": "bff-battery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023865590590:android:709fe0e7b25ad238",
+        "android_client_info": {
+          "package_name": "com.eliorcohen123456.batteryapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023865590590-7r4n5mlak15f8mgf3n06p6m7q829cltr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZESRt6Ts9heaDNramfq8UmJmtMFDivoY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
