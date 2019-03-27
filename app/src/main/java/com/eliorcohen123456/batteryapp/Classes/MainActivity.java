@@ -1,4 +1,4 @@
-package com.eliorcohen123456.batteryapp;
+package com.eliorcohen123456.batteryapp.Classes;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -17,6 +17,9 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.eliorcohen123456.batteryapp.BroadcastReceiver.BatteryReceiver;
+import com.eliorcohen123456.batteryapp.R;
 
 public class MainActivity extends AppCompatActivity {
 

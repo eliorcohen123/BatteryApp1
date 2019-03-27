@@ -29,7 +29,7 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme2">
         <activity
-            android:name="com.eliorcohen123456.batteryapp.MainActivity"
+            android:name="com.eliorcohen123456.batteryapp.Classes.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -39,11 +39,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.eliorcohen123456.batteryapp.ChangeModePhone"
+            android:name="com.eliorcohen123456.batteryapp.Classes.ChangeModePhone"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
 
-        <receiver android:name="com.eliorcohen123456.batteryapp.MyBroadcastReceiverBattery">
+        <receiver android:name="com.eliorcohen123456.batteryapp.BroadcastReceiver.MyBroadcastReceiverBattery">
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
@@ -51,7 +51,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.eliorcohen123456.batteryapp.BatteryReceiver"
+            android:name="com.eliorcohen123456.batteryapp.BroadcastReceiver.BatteryReceiver"
             android:enabled="true"
             android:exported="true"
             android:process=":remote" />

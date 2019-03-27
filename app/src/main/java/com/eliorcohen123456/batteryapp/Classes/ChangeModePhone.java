@@ -1,4 +1,4 @@
-package com.eliorcohen123456.batteryapp;
+package com.eliorcohen123456.batteryapp.Classes;
 
 import android.Manifest;
 import android.app.NotificationManager;
@@ -22,6 +22,8 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import com.eliorcohen123456.batteryapp.R;
 
 public class ChangeModePhone extends AppCompatActivity {
 

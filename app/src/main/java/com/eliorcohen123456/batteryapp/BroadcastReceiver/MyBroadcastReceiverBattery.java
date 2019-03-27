@@ -1,4 +1,4 @@
-package com.eliorcohen123456.batteryapp;
+package com.eliorcohen123456.batteryapp.BroadcastReceiver;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -11,6 +11,9 @@ import android.support.v4.app.NotificationCompat;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+
+import com.eliorcohen123456.batteryapp.Classes.MainActivity;
+import com.eliorcohen123456.batteryapp.R;
 
 // BroadcastReceiver are check if the phone are charged
 public class MyBroadcastReceiverBattery extends BroadcastReceiver {
