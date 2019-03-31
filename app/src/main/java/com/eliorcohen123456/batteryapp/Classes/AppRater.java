@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 class AppRater {
 
-    private final static String APP_TITLE = "Lovely Favorites PlacesSearch";// App Name
-    private final static String APP_PNAME = "com.eliorcohen12345.locationproject";// Package Name
+    private final static String APP_TITLE = "Bff Battery";// App Name
+    private final static String APP_PNAME = "com.eliorcohen123456.batteryapp";// Package Name
 
     private final static int MILLISECONDS_UNTIL_PROMPT = 1;//Min number of milliSeconds
     private final static int LAUNCHES_UNTIL_PROMPT = 3;//Min number of launches
