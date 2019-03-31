@@ -131,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
         } else if (s2 == 2) {
             rb2.setChecked(true);
         }
+
+        AppRater.app_launched(this);
     }
 
     private void getBatteryCapacity() {
