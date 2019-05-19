@@ -4,12 +4,10 @@
 
     <item
         android:id="@+id/options"
-        android:icon="@drawable/ic_dehaze_red_24dp"
+        android:icon="@drawable/ic_dehaze_lightblue_24dp"
         android:title=""
         app:showAsAction="ifRoom">
-
         <menu>
-
             <item
                 android:id="@+id/mode"
                 android:icon="@drawable/ic_mode_edit_blue_24dp"

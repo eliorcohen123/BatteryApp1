@@ -47,13 +47,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:gravity="center">
 
                 <RadioButton
                     android:id="@+id/radioButtonChange1"
                     android:layout_width="264dp"
-                    android:layout_height="100dp"
+                    android:layout_height="140dp"
                     android:background="@drawable/timg"
                     android:checked="true"
                     android:textColor="@color/colorWhite" />
@@ -61,7 +61,7 @@
                 <RadioButton
                     android:id="@+id/radioButtonChange2"
                     android:layout_width="264dp"
-                    android:layout_height="100dp"
+                    android:layout_height="140dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/timg"
                     android:checked="false"
@@ -70,7 +70,7 @@
                 <RadioButton
                     android:id="@+id/radioButtonChange3"
                     android:layout_width="264dp"
-                    android:layout_height="100dp"
+                    android:layout_height="140dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/timg"
                     android:checked="false"
@@ -79,7 +79,7 @@
                 <RadioButton
                     android:id="@+id/radioButtonChange4"
                     android:layout_width="264dp"
-                    android:layout_height="100dp"
+                    android:layout_height="140dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/timg"
                     android:checked="false"
@@ -91,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:gravity="center"
             android:orientation="horizontal">
 

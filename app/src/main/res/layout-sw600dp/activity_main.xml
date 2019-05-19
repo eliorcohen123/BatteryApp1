@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d5ebfa"
+    android:background="@drawable/background"
     android:padding="16dp"
     tools:context=".Classes.MainActivity">
 
@@ -53,6 +53,7 @@
                 android:id="@+id/tv_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
                 android:textSize="20sp" />
 
             <TextView
@@ -60,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:textColor="@color/colorWhite"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -69,6 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="200dp"
             android:layout_marginLeft="200dp"
+            android:textColor="@color/colorWhite"
             android:textSize="15sp" />
     </LinearLayout>
 
@@ -77,6 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="380dp"
+        android:textColor="@color/colorWhite"
         android:textSize="18sp" />
 
     <TextView
@@ -84,6 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="600dp"
+        android:textColor="@color/colorWhite"
         android:textSize="20sp" />
 
     <LinearLayout
@@ -99,6 +104,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textColor="@color/colorWhite"
             android:textSize="15sp" />
 
         <RadioGroup
@@ -112,8 +118,8 @@
             <RadioButton
                 android:id="@+id/radioButtonFull1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/purple"
+                android:layout_height="32dp"
+                android:background="@drawable/timg"
                 android:checked="false"
                 android:gravity="center"
                 android:text="Yes"
@@ -122,9 +128,9 @@
             <RadioButton
                 android:id="@+id/radioButtonFull2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="32dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/purple"
+                android:background="@drawable/timg"
                 android:checked="true"
                 android:gravity="center"
                 android:text="No"
