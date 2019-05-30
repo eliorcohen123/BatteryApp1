@@ -85,9 +85,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mContext = getApplicationContext();
-        IntentFilter iFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        mContext.registerReceiver(mBroadcastReceiver, iFilter);
+        initUI();
+        myBroadcast();
+
+        AppRater.app_launched(this);
+    }
+
+    private void initUI() {
         mTextViewInfo = findViewById(R.id.tv_info);
         mTextViewPercentage = findViewById(R.id.tv_percentage);
         mInfo_amper = findViewById(R.id.info_amper);
@@ -101,6 +105,12 @@ public class MainActivity extends AppCompatActivity {
         rg1 = findViewById(R.id.radioGroupFull1);
         rb1 = findViewById(R.id.radioButtonFull1);
         rb2 = findViewById(R.id.radioButtonFull2);
+    }
+
+    private void myBroadcast() {
+        mContext = getApplicationContext();
+        IntentFilter iFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        mContext.registerReceiver(mBroadcastReceiver, iFilter);
         mProgressBar1.setVisibility(View.INVISIBLE);
         mProgressBar2.setVisibility(View.INVISIBLE);
         mProgressBar3.setVisibility(View.INVISIBLE);
@@ -131,8 +141,6 @@ public class MainActivity extends AppCompatActivity {
         } else if (s2 == 2) {
             rb2.setChecked(true);
         }
-
-        AppRater.app_launched(this);
     }
 
     private void getBatteryCapacity() {

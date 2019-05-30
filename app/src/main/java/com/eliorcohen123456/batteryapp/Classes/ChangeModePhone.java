@@ -38,6 +38,19 @@ public class ChangeModePhone extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mode);
 
+        initUI();
+        myPermissions();
+    }
+
+    private void initUI() {
+        radioGroup1 = findViewById(R.id.radioGroupChange1);
+        radioButton1 = findViewById(R.id.radioButtonChange1);
+        radioButton2 = findViewById(R.id.radioButtonChange2);
+        radioButton3 = findViewById(R.id.radioButtonChange3);
+        radioButton4 = findViewById(R.id.radioButtonChange4);
+    }
+
+    private void myPermissions() {
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !notificationManager.isNotificationPolicyAccessGranted()) {
@@ -48,12 +61,6 @@ public class ChangeModePhone extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_DENIED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, REQUEST_CODE_READ_CONTACTS);
         }
-
-        radioGroup1 = findViewById(R.id.radioGroupChange1);
-        radioButton1 = findViewById(R.id.radioButtonChange1);
-        radioButton2 = findViewById(R.id.radioButtonChange2);
-        radioButton3 = findViewById(R.id.radioButtonChange3);
-        radioButton4 = findViewById(R.id.radioButtonChange4);
 
         radioButton1.setText("Classic Mode:\n\nBrightnesses = 50%.  Vibration = ON.\nTime Screen = 30s.  Volume = OFF.\nWi-Fi = ON.  Bluetooth = OFF.");
         radioButton2.setText("Long-life:\n\nBrightnesses = 30%.  Vibration = OFF.\nTime Screen = 30s.  Volume = OFF.\nWi-Fi = OFF.  Bluetooth = OFF.");
@@ -188,8 +195,7 @@ public class ChangeModePhone extends AppCompatActivity {
 
                             android.provider.Settings.System.putInt(getContentResolver(),
                                     Settings.System.SCREEN_OFF_TIMEOUT, 60000);
-                        }
-                        else {
+                        } else {
                             Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS);
                             intent.setData(Uri.parse("package:" + getPackageName()));
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
