@@ -87,24 +87,26 @@ public class MainActivity extends AppCompatActivity {
 
         initUI();
         myBroadcast();
-
-        AppRater.app_launched(this);
     }
 
     private void initUI() {
-        mTextViewInfo = findViewById(R.id.tv_info);
-        mTextViewPercentage = findViewById(R.id.tv_percentage);
-        mInfo_amper = findViewById(R.id.info_amper);
         mProgressBar1 = findViewById(R.id.pb1);
         mProgressBar2 = findViewById(R.id.pb2);
         mProgressBar3 = findViewById(R.id.pb3);
+
+        mTextViewInfo = findViewById(R.id.tv_info);
+        mTextViewPercentage = findViewById(R.id.tv_percentage);
+        mInfo_amper = findViewById(R.id.info_amper);
         mInfo_time = findViewById(R.id.tv_time);
         mTextViewInfo2 = findViewById(R.id.tv_info2);
         mTextViewInfo3 = findViewById(R.id.tv_time_charge);
-        mTextFull = findViewById(R.id.textView21);
+        mTextFull = findViewById(R.id.tv_full);
+
         rg1 = findViewById(R.id.radioGroupFull1);
         rb1 = findViewById(R.id.radioButtonFull1);
         rb2 = findViewById(R.id.radioButtonFull2);
+
+        AppRater.app_launched(this);
     }
 
     private void myBroadcast() {
