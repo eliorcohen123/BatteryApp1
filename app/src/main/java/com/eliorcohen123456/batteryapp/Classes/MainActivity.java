@@ -18,7 +18,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.eliorcohen123456.batteryapp.BroadcastReceiver.BatteryReceiver;
+import com.eliorcohen123456.batteryapp.BroadcastReceiverAndService.BatteryReceiver;
 import com.eliorcohen123456.batteryapp.R;
 
 public class MainActivity extends AppCompatActivity {

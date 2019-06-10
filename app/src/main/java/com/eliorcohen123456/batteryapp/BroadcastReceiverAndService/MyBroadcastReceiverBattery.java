@@ -1,4 +1,4 @@
-package com.eliorcohen123456.batteryapp.BroadcastReceiver;
+package com.eliorcohen123456.batteryapp.BroadcastReceiverAndService;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -28,11 +28,8 @@ public class MyBroadcastReceiverBattery extends BroadcastReceiver {
         switch (action) {
             case Intent.ACTION_POWER_CONNECTED: {
                 final int NOTIFY_ID = 1; // ID of notification
-
                 String id = "1"; // default_channel_id
-
                 String title = "BatteryApp"; // Default Channel
-
                 PendingIntent pendingIntent;
                 NotificationCompat.Builder builder;
                 if (notificationManager == null) {
@@ -80,11 +77,8 @@ public class MyBroadcastReceiverBattery extends BroadcastReceiver {
             }
             case Intent.ACTION_POWER_DISCONNECTED: {
                 final int NOTIFY_ID = 1; // ID of notification
-
                 String id = "1"; // default_channel_id
-
                 String title = "BatteryApp"; // Default Channel
-
                 PendingIntent pendingIntent;
                 NotificationCompat.Builder builder;
                 if (notificationManager == null) {

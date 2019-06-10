@@ -1,4 +1,4 @@
-package com.eliorcohen123456.batteryapp.BroadcastReceiver;
+package com.eliorcohen123456.batteryapp.BroadcastReceiverAndService;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
