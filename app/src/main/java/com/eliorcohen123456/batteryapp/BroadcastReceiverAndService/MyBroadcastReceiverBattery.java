@@ -54,7 +54,7 @@ public class MyBroadcastReceiverBattery extends BroadcastReceiver {
                             .setDefaults(Notification.DEFAULT_ALL)
                             .setAutoCancel(true)
                             .setContentIntent(pendingIntent)
-                            .setTicker("תפילה")
+                            .setTicker("BatteryApp")
                             .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
                 } else {
                     builder = new NotificationCompat.Builder(context, id);
