@@ -17,7 +17,9 @@ import com.eliorcohen123456.batteryapp.R;
 
 public class BatteryReceiver extends BroadcastReceiver {
 
+    private NotificationCompat.Builder builder;
     private NotificationManager notificationManager;
+    private static PendingIntent pendingIntent;
     private int mProgressStatus = 0;
 
     @Override
@@ -30,8 +32,6 @@ public class BatteryReceiver extends BroadcastReceiver {
             final int NOTIFY_ID = 1; // ID of notification
             String id = "1"; // default_channel_id
             String title = "BatteryApp"; // Default Channel
-            PendingIntent pendingIntent;
-            NotificationCompat.Builder builder;
             if (notificationManager == null) {
                 notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             }
@@ -44,36 +44,29 @@ public class BatteryReceiver extends BroadcastReceiver {
                     mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
                     notificationManager.createNotificationChannel(mChannel);
                 }
-                builder = new NotificationCompat.Builder(context, id);
-                intent = new Intent(context, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                pendingIntent = PendingIntent.getActivity(context, 1, intent, 0);
-                builder.setContentTitle("BatteryApp")
-                        .setContentText("Your battery is full, disconnect the charger :)")  // required
-                        .setSmallIcon(R.drawable.batterypic)  // required
-                        .setDefaults(Notification.DEFAULT_ALL)
-                        .setAutoCancel(true)
-                        .setContentIntent(pendingIntent)
-                        .setTicker("BatteryApp")
-                        .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+                getBuilder(context, id);
             } else {
-                builder = new NotificationCompat.Builder(context, id);
-                intent = new Intent(context, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                pendingIntent = PendingIntent.getActivity(context, 1, intent, 0);
-                builder.setContentTitle("BatteryApp")
-                        .setContentText("Your battery is full, disconnect the charger :)")  // required
-                        .setSmallIcon(R.drawable.batterypic)  // required
-                        .setDefaults(Notification.DEFAULT_ALL)
-                        .setAutoCancel(true)
-                        .setContentIntent(pendingIntent)
-                        .setTicker("BatteryApp")
-                        .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
-                        .setPriority(Notification.PRIORITY_HIGH);
+                getBuilder(context, id);
             }
             Notification notification = builder.build();
             notificationManager.notify(NOTIFY_ID, notification);
         }
+    }
+
+    private void getBuilder(Context context, String id) {
+        builder = new NotificationCompat.Builder(context, id);
+        Intent intent = new Intent(context, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        pendingIntent = PendingIntent.getActivity(context, 1, intent, 0);
+        builder.setContentTitle("BatteryApp")
+                .setContentText("Your battery is full, disconnect the charger :)")  // required
+                .setSmallIcon(R.drawable.batterypic)  // required
+                .setDefaults(Notification.DEFAULT_ALL)
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
+                .setTicker("BatteryApp")
+                .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
+                .setPriority(Notification.PRIORITY_HIGH);
     }
 
 }
