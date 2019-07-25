@@ -27,7 +27,6 @@ public class MyBroadcastReceiverBattery extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
         String action = intent.getAction();
         assert action != null;
         switch (action) {
