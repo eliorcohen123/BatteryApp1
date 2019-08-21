@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
         mTextFull.setText("Alert when battery\n is full?\n(Keep the app open)");
 
-        final SharedPreferences myPrefs2 = getSharedPreferences("general", MODE_PRIVATE);
+        final SharedPreferences myPrefs = getSharedPreferences("general", MODE_PRIVATE);
 
         final IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
         final BatteryReceiver receiver = new BatteryReceiver();
@@ -128,16 +128,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.radioButtonFull1) {
-                    myPrefs2.edit().putInt("selected", 1).commit();
+                    myPrefs.edit().putInt("selected", 1).apply();
                     registerReceiver(receiver, filter);
                 } else if (checkedId == R.id.radioButtonFull2) {
-                    myPrefs2.edit().putInt("selected", 2).commit();
+                    myPrefs.edit().putInt("selected", 2).apply();
                     unregisterReceiver(receiver);
                 }
             }
         });
 
-        int s2 = myPrefs2.getInt("selected", 0);
+        int s2 = myPrefs.getInt("selected", 0);
         if (s2 == 1) {
             rb1.setChecked(true);
         } else if (s2 == 2) {
