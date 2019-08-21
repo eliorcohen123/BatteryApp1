@@ -184,7 +184,7 @@ public class ChangeModePhone extends AppCompatActivity {
                     BluetoothAdapter bAdapter = BluetoothAdapter.getDefaultAdapter();
                     bAdapter.disable();
 
-                    myPrefs.edit().putInt("selectedChange", 3).commit();
+                    myPrefs.edit().putInt("selectedChange", 3).apply();
                 } else if (checkedId == R.id.radioButtonChange4) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         if (Settings.System.canWrite(ChangeModePhone.this)) {
@@ -213,7 +213,7 @@ public class ChangeModePhone extends AppCompatActivity {
                     Intent eintent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                     startActivityForResult(eintent, 1);
 
-                    myPrefs.edit().putInt("selectedChange", 4).commit();
+                    myPrefs.edit().putInt("selectedChange", 4).apply();
                 }
             }
         });
