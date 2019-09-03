@@ -64,16 +64,16 @@ public class MainActivity extends AppCompatActivity {
                 int plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
                 if (plugged == BatteryManager.BATTERY_PLUGGED_USB) {
                     mTextViewInfo2.setText("\n\nCharger:\n" + "Battery plugged usb");
-                    mTextViewInfo2.setText("Battery health:\n" + convHealth(health) + "\n\nTechnology:\n" + technology + mTextViewInfo2.getText());
+                    mTextViewInfo2.setText("Battery health:\n" + healthMode(health) + "\n\nTechnology:\n" + technology + mTextViewInfo2.getText());
                 } else if (plugged == BatteryManager.BATTERY_PLUGGED_AC) {
                     mTextViewInfo2.setText("\n\nCharger:\n" + "Battery plugged ac");
-                    mTextViewInfo2.setText("Battery health:\n" + convHealth(health) + "\n\nTechnology:\n" + technology + mTextViewInfo2.getText());
+                    mTextViewInfo2.setText("Battery health:\n" + healthMode(health) + "\n\nTechnology:\n" + technology + mTextViewInfo2.getText());
                 } else if (plugged == BatteryManager.BATTERY_PLUGGED_WIRELESS) {
                     mTextViewInfo2.setText("\n\nCharger:\n" + "Battery plugged wireless");
-                    mTextViewInfo2.setText("Battery health:\n" + convHealth(health) + "\n\nTechnology:\n" + technology + mTextViewInfo2.getText());
+                    mTextViewInfo2.setText("Battery health:\n" + healthMode(health) + "\n\nTechnology:\n" + technology + mTextViewInfo2.getText());
                 }
             } else {
-                mTextViewInfo2.setText("Battery health:\n" + convHealth(health) + "\n\nTechnology:\n" + technology);
+                mTextViewInfo2.setText("Battery health:\n" + healthMode(health) + "\n\nTechnology:\n" + technology);
             }
             getBatteryCapacity();
         }
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initUI();
-        myBroadcast();
+        myBroadcastReceiver();
     }
 
     private void initUI() {
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         AppRater.app_launched(this);
     }
 
-    private void myBroadcast() {
+    private void myBroadcastReceiver() {
         mContext = getApplicationContext();
         IntentFilter iFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
         mContext.registerReceiver(mBroadcastReceiver, iFilter);
@@ -210,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private String convHealth(int health) {
+    private String healthMode(int health) {
         String result;
         switch (health) {
             case BatteryManager.BATTERY_HEALTH_COLD:

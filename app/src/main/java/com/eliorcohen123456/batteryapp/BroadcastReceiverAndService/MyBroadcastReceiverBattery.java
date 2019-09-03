@@ -23,7 +23,7 @@ public class MyBroadcastReceiverBattery extends BroadcastReceiver {
     private static PendingIntent pendingIntent;
     final int NOTIFY_ID = 3; // ID of notification
     String id = "3"; // default_channel_id
-    String title = "BatteryApp"; // Default Channel
+    String title = "BFF Battery"; // Default Channel
 
     @Override
     public void onReceive(Context context, Intent intent) {

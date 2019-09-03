@@ -31,7 +31,7 @@ public class BatteryReceiver extends BroadcastReceiver {
         if (mProgressStatus == 100) {
             final int NOTIFY_ID = 1; // ID of notification
             String id = "1"; // default_channel_id
-            String title = "BatteryApp"; // Default Channel
+            String title = "BFF Battery"; // Default Channel
             if (notificationManager == null) {
                 notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             }
@@ -58,13 +58,13 @@ public class BatteryReceiver extends BroadcastReceiver {
         Intent intent = new Intent(context, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         pendingIntent = PendingIntent.getActivity(context, 1, intent, 0);
-        builder.setContentTitle("BatteryApp")
+        builder.setContentTitle("BFF Battery")
                 .setContentText("Your battery is full, disconnect the charger :)")  // required
                 .setSmallIcon(R.drawable.batterypic)  // required
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
-                .setTicker("BatteryApp")
+                .setTicker("BFF Battery")
                 .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
                 .setPriority(Notification.PRIORITY_HIGH);
     }
