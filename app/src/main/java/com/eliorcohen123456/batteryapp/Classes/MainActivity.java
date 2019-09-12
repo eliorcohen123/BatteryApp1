@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.BatteryManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ import android.widget.TextView;
 
 import com.eliorcohen123456.batteryapp.BroadcastReceiverAndService.BatteryReceiver;
 import com.eliorcohen123456.batteryapp.R;
+
+import guy4444.smartrate.SmartRate;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -86,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initUI();
+        initAppRater();
         myBroadcastReceiver();
     }
 
@@ -105,8 +109,24 @@ public class MainActivity extends AppCompatActivity {
         rg1 = findViewById(R.id.radioGroupFull1);
         rb1 = findViewById(R.id.radioButtonFull1);
         rb2 = findViewById(R.id.radioButtonFull2);
+    }
 
-        AppRater.app_launched(this);
+    private void initAppRater() {
+        SmartRate.Rate(MainActivity.this
+                , "Rate Us"
+                , "Tell others what you think about this app"
+                , "Continue"
+                , "Please take a moment and rate us on Google Play"
+                , "click here"
+                , "Ask me later"
+                , "Never ask again"
+                , "Cancel"
+                , "Thanks for the feedback"
+                , Color.parseColor("#2196F3")
+                , 5
+                , 1
+                , 1
+        );
     }
 
     private void myBroadcastReceiver() {

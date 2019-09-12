@@ -4,9 +4,9 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.eliorcohen123456.batteryapp"
-        minSdkVersion 14
+        minSdkVersion 18
         targetSdkVersion 28
-        versionCode 11
+        versionCode 12
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -27,6 +27,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.google.firebase:firebase-core:16.0.9'
     implementation 'com.google.firebase:firebase-messaging:17.6.0'
+    implementation 'com.github.guy-4444:SmartRateUsDialog-Android:1.00.08'
 }
 
 apply plugin: 'com.google.gms.google-services'
