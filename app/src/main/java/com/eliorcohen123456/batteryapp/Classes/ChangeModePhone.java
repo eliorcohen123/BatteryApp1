@@ -96,82 +96,51 @@ public class ChangeModePhone extends AppCompatActivity {
 
         final SharedPreferences myPrefs = getSharedPreferences("generalChange", MODE_PRIVATE);  //you can give any name in place of generalChange to your preferences
 
-        radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radioButtonChange1) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        if (Settings.System.canWrite(ChangeModePhone.this)) {
-                            Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
-                            WindowManager.LayoutParams layoutpars = getWindow().getAttributes();
-                            layoutpars.screenBrightness = 0.5f;
-                            getWindow().setAttributes(layoutpars);
+        radioGroup1.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.radioButtonChange1) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (Settings.System.canWrite(ChangeModePhone.this)) {
+                        Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
+                        WindowManager.LayoutParams layoutpars = getWindow().getAttributes();
+                        layoutpars.screenBrightness = 0.5f;
+                        getWindow().setAttributes(layoutpars);
 
-                            android.provider.Settings.System.putInt(getContentResolver(),
-                                    Settings.System.SCREEN_OFF_TIMEOUT, 30000);
-                        } else {
-                            Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS);
-                            intent.setData(Uri.parse("package:" + getPackageName()));
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
-                        }
+                        Settings.System.putInt(getContentResolver(),
+                                Settings.System.SCREEN_OFF_TIMEOUT, 30000);
+                    } else {
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
+                        intent.setData(Uri.parse("package:" + getPackageName()));
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
                     }
+                }
 
-                    WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-                    wifiManager.setWifiEnabled(true);
+                WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+                wifiManager.setWifiEnabled(true);
 
-                    AudioManager am;
-                    am = (AudioManager) getBaseContext().getSystemService(Context.AUDIO_SERVICE);
-                    am.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
+                AudioManager am;
+                am = (AudioManager) getBaseContext().getSystemService(Context.AUDIO_SERVICE);
+                am.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
 
-                    BluetoothAdapter bAdapter = BluetoothAdapter.getDefaultAdapter();
-                    bAdapter.disable();
+                BluetoothAdapter bAdapter = BluetoothAdapter.getDefaultAdapter();
+                bAdapter.disable();
 
-                    myPrefs.edit().putInt("selectedChange", 1).apply();
-                } else if (checkedId == R.id.radioButtonChange2) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        if (Settings.System.canWrite(ChangeModePhone.this)) {
-                            Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
-                            WindowManager.LayoutParams layoutpars = getWindow().getAttributes();
-                            layoutpars.screenBrightness = 0.3f;
-                            getWindow().setAttributes(layoutpars);
+                myPrefs.edit().putInt("selectedChange", 1).apply();
+            } else if (checkedId == R.id.radioButtonChange2) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (Settings.System.canWrite(ChangeModePhone.this)) {
+                        Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
+                        WindowManager.LayoutParams layoutpars = getWindow().getAttributes();
+                        layoutpars.screenBrightness = 0.3f;
+                        getWindow().setAttributes(layoutpars);
 
-                            android.provider.Settings.System.putInt(getContentResolver(),
-                                    Settings.System.SCREEN_OFF_TIMEOUT, 30000);
-                        } else {
-                            Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS);
-                            intent.setData(Uri.parse("package:" + getPackageName()));
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
-                        }
-
-                        WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-                        wifiManager.setWifiEnabled(false);
-
-                        AudioManager am;
-                        am = (AudioManager) getBaseContext().getSystemService(Context.AUDIO_SERVICE);
-                        am.setRingerMode(AudioManager.RINGER_MODE_SILENT);
-
-                        BluetoothAdapter bAdapter = BluetoothAdapter.getDefaultAdapter();
-                        bAdapter.disable();
-                    }
-                    myPrefs.edit().putInt("selectedChange", 2).apply();
-                } else if (checkedId == R.id.radioButtonChange3) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        if (Settings.System.canWrite(ChangeModePhone.this)) {
-                            Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
-                            WindowManager.LayoutParams layoutpars = getWindow().getAttributes();
-                            layoutpars.screenBrightness = 0.3f;
-                            getWindow().setAttributes(layoutpars);
-
-                            android.provider.Settings.System.putInt(getContentResolver(),
-                                    Settings.System.SCREEN_OFF_TIMEOUT, 30000);
-                        } else {
-                            Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS);
-                            intent.setData(Uri.parse("package:" + getPackageName()));
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
-                        }
+                        Settings.System.putInt(getContentResolver(),
+                                Settings.System.SCREEN_OFF_TIMEOUT, 30000);
+                    } else {
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
+                        intent.setData(Uri.parse("package:" + getPackageName()));
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
                     }
 
                     WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
@@ -179,42 +148,70 @@ public class ChangeModePhone extends AppCompatActivity {
 
                     AudioManager am;
                     am = (AudioManager) getBaseContext().getSystemService(Context.AUDIO_SERVICE);
-                    am.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
+                    am.setRingerMode(AudioManager.RINGER_MODE_SILENT);
 
                     BluetoothAdapter bAdapter = BluetoothAdapter.getDefaultAdapter();
                     bAdapter.disable();
-
-                    myPrefs.edit().putInt("selectedChange", 3).apply();
-                } else if (checkedId == R.id.radioButtonChange4) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        if (Settings.System.canWrite(ChangeModePhone.this)) {
-                            Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
-                            WindowManager.LayoutParams layoutpars = getWindow().getAttributes();
-                            layoutpars.screenBrightness = 1.0f;
-                            getWindow().setAttributes(layoutpars);
-
-                            android.provider.Settings.System.putInt(getContentResolver(),
-                                    Settings.System.SCREEN_OFF_TIMEOUT, 60000);
-                        } else {
-                            Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS);
-                            intent.setData(Uri.parse("package:" + getPackageName()));
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
-                        }
-                    }
-
-                    WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-                    wifiManager.setWifiEnabled(true);
-
-                    AudioManager am;
-                    am = (AudioManager) getBaseContext().getSystemService(Context.AUDIO_SERVICE);
-                    am.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
-
-                    Intent eintent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                    startActivityForResult(eintent, 1);
-
-                    myPrefs.edit().putInt("selectedChange", 4).apply();
                 }
+                myPrefs.edit().putInt("selectedChange", 2).apply();
+            } else if (checkedId == R.id.radioButtonChange3) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (Settings.System.canWrite(ChangeModePhone.this)) {
+                        Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
+                        WindowManager.LayoutParams layoutpars = getWindow().getAttributes();
+                        layoutpars.screenBrightness = 0.3f;
+                        getWindow().setAttributes(layoutpars);
+
+                        Settings.System.putInt(getContentResolver(),
+                                Settings.System.SCREEN_OFF_TIMEOUT, 30000);
+                    } else {
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
+                        intent.setData(Uri.parse("package:" + getPackageName()));
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+                }
+
+                WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+                wifiManager.setWifiEnabled(false);
+
+                AudioManager am;
+                am = (AudioManager) getBaseContext().getSystemService(Context.AUDIO_SERVICE);
+                am.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
+
+                BluetoothAdapter bAdapter = BluetoothAdapter.getDefaultAdapter();
+                bAdapter.disable();
+
+                myPrefs.edit().putInt("selectedChange", 3).apply();
+            } else if (checkedId == R.id.radioButtonChange4) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (Settings.System.canWrite(ChangeModePhone.this)) {
+                        Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
+                        WindowManager.LayoutParams layoutpars = getWindow().getAttributes();
+                        layoutpars.screenBrightness = 1.0f;
+                        getWindow().setAttributes(layoutpars);
+
+                        Settings.System.putInt(getContentResolver(),
+                                Settings.System.SCREEN_OFF_TIMEOUT, 60000);
+                    } else {
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
+                        intent.setData(Uri.parse("package:" + getPackageName()));
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+                }
+
+                WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+                wifiManager.setWifiEnabled(true);
+
+                AudioManager am;
+                am = (AudioManager) getBaseContext().getSystemService(Context.AUDIO_SERVICE);
+                am.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+
+                Intent eintent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(eintent, 1);
+
+                myPrefs.edit().putInt("selectedChange", 4).apply();
             }
         });
 
