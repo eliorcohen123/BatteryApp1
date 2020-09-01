@@ -273,7 +273,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.mode:
-                Intent intentChangeModePhone = new Intent(MainActivity.this, ChangeModePhone.class);
+                Intent intentChangeModePhone = new Intent(MainActivity.this, ChangeModePhoneActivity.class);
                 startActivity(intentChangeModePhone);
                 break;
         }

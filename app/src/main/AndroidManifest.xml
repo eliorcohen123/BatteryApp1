@@ -39,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.eliorcohen123456.batteryapp.PagesPackage.ChangeModePhone"
+            android:name="com.eliorcohen123456.batteryapp.PagesPackage.ChangeModePhoneActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
 

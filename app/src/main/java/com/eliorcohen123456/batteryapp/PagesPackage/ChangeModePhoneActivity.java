@@ -25,7 +25,7 @@ import android.widget.RadioGroup;
 
 import com.eliorcohen123456.batteryapp.R;
 
-public class ChangeModePhone extends AppCompatActivity {
+public class ChangeModePhoneActivity extends AppCompatActivity {
 
     private int brightness;
     private RadioGroup radioGroup1;
@@ -88,9 +88,9 @@ public class ChangeModePhone extends AppCompatActivity {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                 Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
                 intent.setData(Uri.parse("package:" + getPackageName()));
-                startActivityForResult(intent, ChangeModePhone.CODE_WRITE_SETTINGS_PERMISSION);
+                startActivityForResult(intent, ChangeModePhoneActivity.CODE_WRITE_SETTINGS_PERMISSION);
             } else {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_SETTINGS}, ChangeModePhone.CODE_WRITE_SETTINGS_PERMISSION);
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_SETTINGS}, ChangeModePhoneActivity.CODE_WRITE_SETTINGS_PERMISSION);
             }
         }
 
@@ -99,7 +99,7 @@ public class ChangeModePhone extends AppCompatActivity {
         radioGroup1.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.radioButtonChange1) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (Settings.System.canWrite(ChangeModePhone.this)) {
+                    if (Settings.System.canWrite(ChangeModePhoneActivity.this)) {
                         Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
                         WindowManager.LayoutParams layoutpars = getWindow().getAttributes();
                         layoutpars.screenBrightness = 0.5f;
@@ -128,7 +128,7 @@ public class ChangeModePhone extends AppCompatActivity {
                 myPrefs.edit().putInt("selectedChange", 1).apply();
             } else if (checkedId == R.id.radioButtonChange2) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (Settings.System.canWrite(ChangeModePhone.this)) {
+                    if (Settings.System.canWrite(ChangeModePhoneActivity.this)) {
                         Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
                         WindowManager.LayoutParams layoutpars = getWindow().getAttributes();
                         layoutpars.screenBrightness = 0.3f;
@@ -156,7 +156,7 @@ public class ChangeModePhone extends AppCompatActivity {
                 myPrefs.edit().putInt("selectedChange", 2).apply();
             } else if (checkedId == R.id.radioButtonChange3) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (Settings.System.canWrite(ChangeModePhone.this)) {
+                    if (Settings.System.canWrite(ChangeModePhoneActivity.this)) {
                         Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
                         WindowManager.LayoutParams layoutpars = getWindow().getAttributes();
                         layoutpars.screenBrightness = 0.3f;
@@ -185,7 +185,7 @@ public class ChangeModePhone extends AppCompatActivity {
                 myPrefs.edit().putInt("selectedChange", 3).apply();
             } else if (checkedId == R.id.radioButtonChange4) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (Settings.System.canWrite(ChangeModePhone.this)) {
+                    if (Settings.System.canWrite(ChangeModePhoneActivity.this)) {
                         Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
                         WindowManager.LayoutParams layoutpars = getWindow().getAttributes();
                         layoutpars.screenBrightness = 1.0f;
