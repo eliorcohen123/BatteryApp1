@@ -19,7 +19,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.eliorcohen123456.batteryapp.BroadcastReceiversAndServicesPackage.BatteryReceiver;
+import com.eliorcohen123456.batteryapp.OthersPackage.BatteryReceiver;
 import com.eliorcohen123456.batteryapp.R;
 
 import guy4444.smartrate.SmartRate;

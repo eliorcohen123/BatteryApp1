@@ -43,7 +43,7 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
 
-        <receiver android:name="com.eliorcohen123456.batteryapp.BroadcastReceiversAndServicesPackage.MyBroadcastReceiverBattery">
+        <receiver android:name="com.eliorcohen123456.batteryapp.OthersPackage.MyBroadcastReceiverBattery">
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
@@ -51,11 +51,11 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.eliorcohen123456.batteryapp.BroadcastReceiversAndServicesPackage.BatteryReceiver"
+            android:name="com.eliorcohen123456.batteryapp.OthersPackage.BatteryReceiver"
             android:enabled="true"
             android:exported="true"
             android:process=":remote" />
-        <service android:name=".BroadcastReceiversAndServicesPackage.MyFirebaseMessagingService">
+        <service android:name=".OthersPackage.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
