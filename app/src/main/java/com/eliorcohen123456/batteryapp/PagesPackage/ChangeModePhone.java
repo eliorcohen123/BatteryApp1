@@ -1,4 +1,4 @@
-package com.eliorcohen123456.batteryapp.Classes;
+package com.eliorcohen123456.batteryapp.PagesPackage;
 
 import android.Manifest;
 import android.app.NotificationManager;

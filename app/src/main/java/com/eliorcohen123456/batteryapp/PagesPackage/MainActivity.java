@@ -1,4 +1,4 @@
-package com.eliorcohen123456.batteryapp.Classes;
+package com.eliorcohen123456.batteryapp.PagesPackage;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -19,7 +19,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.eliorcohen123456.batteryapp.BroadcastReceiverAndService.BatteryReceiver;
+import com.eliorcohen123456.batteryapp.BroadcastReceiversAndServicesPackage.BatteryReceiver;
 import com.eliorcohen123456.batteryapp.R;
 
 import guy4444.smartrate.SmartRate;

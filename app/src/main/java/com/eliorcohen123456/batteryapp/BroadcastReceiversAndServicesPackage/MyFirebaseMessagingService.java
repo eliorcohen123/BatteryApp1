@@ -1,4 +1,4 @@
-package com.eliorcohen123456.batteryapp.BroadcastReceiverAndService;
+package com.eliorcohen123456.batteryapp.BroadcastReceiversAndServicesPackage;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -11,7 +11,7 @@ import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.eliorcohen123456.batteryapp.Classes.MainActivity;
+import com.eliorcohen123456.batteryapp.PagesPackage.MainActivity;
 import com.eliorcohen123456.batteryapp.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
