@@ -144,16 +144,13 @@ public class MainActivity extends AppCompatActivity {
         final IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
         final BroadcastReceiverBattery1 receiver = new BroadcastReceiverBattery1();
 
-        rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radioButtonFull1) {
-                    myPrefs.edit().putInt("selected", 1).apply();
-                    registerReceiver(receiver, filter);
-                } else if (checkedId == R.id.radioButtonFull2) {
-                    myPrefs.edit().putInt("selected", 2).apply();
-                    unregisterReceiver(receiver);
-                }
+        rg1.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.radioButtonFull1) {
+                myPrefs.edit().putInt("selected", 1).apply();
+                registerReceiver(receiver, filter);
+            } else if (checkedId == R.id.radioButtonFull2) {
+                myPrefs.edit().putInt("selected", 2).apply();
+                unregisterReceiver(receiver);
             }
         });
 
