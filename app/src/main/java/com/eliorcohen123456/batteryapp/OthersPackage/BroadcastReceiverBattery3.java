@@ -21,9 +21,9 @@ public class BroadcastReceiverBattery3 extends BroadcastReceiver {
     private NotificationCompat.Builder builder;
     private NotificationManager notificationManager;
     private static PendingIntent pendingIntent;
-    final int NOTIFY_ID = 3; // ID of notification
-    String id = "3"; // default_channel_id
-    String title = "BFF Battery"; // Default Channel
+    private final int NOTIFY_ID = 3; // ID of notification
+    private String id = "3"; // default_channel_id
+    private String title = "BFF Battery"; // Default Channel
 
     @Override
     public void onReceive(Context context, Intent intent) {
