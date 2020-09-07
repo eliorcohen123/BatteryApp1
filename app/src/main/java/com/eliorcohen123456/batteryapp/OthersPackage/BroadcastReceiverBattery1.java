@@ -15,7 +15,7 @@ import android.app.PendingIntent;
 import com.eliorcohen123456.batteryapp.PagesPackage.MainActivity;
 import com.eliorcohen123456.batteryapp.R;
 
-public class BatteryReceiver extends BroadcastReceiver {
+public class BroadcastReceiverBattery1 extends BroadcastReceiver {
 
     private NotificationCompat.Builder builder;
     private NotificationManager notificationManager;

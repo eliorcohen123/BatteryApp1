@@ -16,7 +16,7 @@ import com.eliorcohen123456.batteryapp.PagesPackage.MainActivity;
 import com.eliorcohen123456.batteryapp.R;
 
 // BroadcastReceiver are check if the phone are charged
-public class MyBroadcastReceiverBattery extends BroadcastReceiver {
+public class BroadcastReceiverBattery3 extends BroadcastReceiver {
 
     private NotificationCompat.Builder builder;
     private NotificationManager notificationManager;

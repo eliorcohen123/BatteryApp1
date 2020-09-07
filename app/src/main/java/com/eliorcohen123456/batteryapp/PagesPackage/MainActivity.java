@@ -19,7 +19,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.eliorcohen123456.batteryapp.OthersPackage.BatteryReceiver;
+import com.eliorcohen123456.batteryapp.OthersPackage.BroadcastReceiverBattery1;
 import com.eliorcohen123456.batteryapp.R;
 
 import guy4444.smartrate.SmartRate;
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
         final SharedPreferences myPrefs = getSharedPreferences("general", MODE_PRIVATE);
 
         final IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        final BatteryReceiver receiver = new BatteryReceiver();
+        final BroadcastReceiverBattery1 receiver = new BroadcastReceiverBattery1();
 
         rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
