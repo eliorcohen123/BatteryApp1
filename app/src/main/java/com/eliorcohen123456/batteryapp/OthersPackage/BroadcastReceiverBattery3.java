@@ -43,9 +43,9 @@ public class BroadcastReceiverBattery3 extends BroadcastReceiver {
                         mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
                         notificationManager.createNotificationChannel(mChannel);
                     }
-                    getBuilder(context, id, "The phone are charged", title);
+                    getBuilder(context, id, "The phone is charged", title);
                 } else {
-                    getBuilder(context, id, "The phone are charged", title);
+                    getBuilder(context, id, "The phone is charged", title);
                 }
                 Notification notification = builder.build();
                 notificationManager.notify(NOTIFY_ID, notification);
@@ -64,9 +64,9 @@ public class BroadcastReceiverBattery3 extends BroadcastReceiver {
                         mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
                         notificationManager.createNotificationChannel(mChannel);
                     }
-                    getBuilder(context, id, "The phone are disconnected from charge", title);
+                    getBuilder(context, id, "The phone is disconnected from charge", title);
                 } else {
-                    getBuilder(context, id, "The phone are disconnected from charge", title);
+                    getBuilder(context, id, "The phone is disconnected from charge", title);
                 }
                 Notification notification = builder.build();
                 notificationManager.notify(NOTIFY_ID, notification);
